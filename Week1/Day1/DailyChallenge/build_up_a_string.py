@@ -1,4 +1,6 @@
 # Daily challenge: Build up a string
+# Sample 10 character string: qwertyuiop
+
 import random
 
 input_string = input('Please input 10 character long string: ')
@@ -17,6 +19,7 @@ else:
 
 
     # Bonus
+    print()
     input_string_shuffeled = list(input_string)
     random.shuffle(input_string_shuffeled)
 
