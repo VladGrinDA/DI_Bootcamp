@@ -19,7 +19,7 @@ total_tikets_cost = 0
 for person in family:
     age = int(input(f'{person}, please enter your age: '))
     
-    if age >= 12:
+    if age > 12:
         total_tikets_cost += 15
     elif age >= 3:
         total_tikets_cost += 10
