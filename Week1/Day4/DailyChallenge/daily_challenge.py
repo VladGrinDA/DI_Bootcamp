@@ -11,16 +11,6 @@ $a
 
 matrix = [[char for char in line] for line in matrix_str.split('\n')]
 print(matrix)
-# symbols = [
-#     ['7', 'i', 'i'],
-#     ['T', 's', 'x'],
-#     ['h', '%', '?'],
-#     ['i', ' ', '#'],
-#     ['s', 'M', ' '],
-#     ['$', 'a', ' '],
-#     ['#', 't', '%'],
-#     ['^', 'r', '!']
-# ]
 
 # as i understood the assigment the maxtrix should look as defined above
 # and we should iterate over it column by columns from top to bottom.
