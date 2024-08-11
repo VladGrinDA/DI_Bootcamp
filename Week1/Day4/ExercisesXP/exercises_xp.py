@@ -18,7 +18,7 @@ favorite_book('Alice in Wonderland')
 print(10 * '-' + '\n', 'Exercise 3')
 
 def describe_city(city='Reykjavik', country='Iceland'): 
-    print(f"{city} is in{country}")
+    print(f"{city} is in {country}")
 
 describe_city()
 
@@ -162,7 +162,7 @@ def quiz():
             print(f'Correct answer: {question["answer"]}')
     
         if len(incorrect_answers) > 3:
-            play_again = input('You have more then 3 incorrect answers. Do you want to play again?')
+            play_again = input('You have more then 3 incorrect answers. Do you want to play again? ')
             if play_again.lower() in 'yes':
                 quiz()
             else:
