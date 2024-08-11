@@ -23,7 +23,7 @@ class Farm:
     
     def get_short_info(self):
         animal_list = [animal + 's' if self.animals[animal] > 1 else animal for animal in self.get_animal_types()]
-        animal_list_str = ', '.join(animal_list[:-1]) + (f' and {animal_list[-1]}' if len(animal_list) > 1 else '')
+        animal_list_str = ', '.join(animal_list[:-1]) + (f' and ' if len(animal_list) > 1 else '') + animal_list[-1]
         return f"{self.owner}'s farm has {animal_list_str}"
     
 
