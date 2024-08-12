@@ -1,11 +1,5 @@
 import math
 
-# prevPage()
-# nextPage()
-# firstPage()
-# lastPage()
-# goToPage(pageNum)
-
 
 class Pagination:
     def __init__(self, items, pageSize=10) -> None:
