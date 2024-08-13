@@ -13,9 +13,12 @@ class Circle:
 
     def area(self):
         return Circle.pi * self.radius ** 2
-
+    
     def __str__(self):
         return f"Circle with radius {self.radius}"
+
+    def __repr__(self):
+        return f"Circle({self.radius})"
 
     def __add__(self, other):
         return Circle(radius=self.radius + other.radius)
