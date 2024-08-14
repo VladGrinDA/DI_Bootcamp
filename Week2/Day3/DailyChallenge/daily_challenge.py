@@ -15,7 +15,6 @@ class Circle:
             raise ValueError("Must provide either radius or diameter")
             
 
-
     def area(self):
         return math.pi * self.radius ** 2
     
@@ -31,20 +30,23 @@ class Circle:
     def __lt__(self, other):
         return self.radius < other.radius
     
-    # def __gt__(self, other):
-    #     return self.radius > other.radius
-    
-    # def __ne__(self, other):
-    #     return self.radius != other.radius
+    def __gt__(self, other):
+        return self.radius > other.radius
 
-    # def __ge__(self, other):
-    #     return self.radius >= other.radius
+    def __ge__(self, other):
+        return self.radius >= other.radius
     
-    # def __le__(self, other):
-    #     return self.radius <= other.radius
+    def __le__(self, other):
+        return self.radius <= other.radius
 
     def __eq__(self, other):
-        return self.radius == other.radius
+        if isinstance(other, Circle):
+            return self.radius == other.radius  
+        else:
+            return False 
+     
+    def __ne__(self, other):
+        return self.radius != other.radius
     
 
 def display_crcles(t, circles, scale=10):
