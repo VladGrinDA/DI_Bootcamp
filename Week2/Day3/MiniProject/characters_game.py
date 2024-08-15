@@ -1,31 +1,12 @@
 
-# Description
-# Create a class called Character with the following attributes and methods:
-# attribute name
-# attribute life – starts with a default value of 20
-# attribute attack – the base attack of a character (integer) will be a default of 10
-# method basic_attack() - accepts another Character instance as a parameter. Your character will <attack> the other
-#  character so his <life> points should drop.
-
-
-# Instructions
-# Now create 3 different classes that inherit from Character:
-# Every character type should say (ie. print) something when they are created, get creative :)
-
-
-
-# Druid:
-# meditate() - increases life by 10, decrease attack by 2
-# animal_help()- increases attack by 5
-# fight() - accepts another Character instance as a parameter and subtracts (0.75*life + 0.75*attack) from the other character’s life.
-# Example:
-# druid.fight(other_char): other_char.life - (0.75*self.life + 0.75*self.attack)
 
 import faker
 import random
 
+
+
 class Character:
-    _available_moves = ['basick_attack']
+    _available_moves = ['basic_attack']
     _available_chars = []
                        
     def __init__(self, name, life=20, attack=10) -> None:
@@ -98,11 +79,6 @@ class Druid(Character):
         other_char.life -= damage
 
 
-# Warrior:
-# brawl() - accepts another Character instance as a parameter, subtracts (2*attack) to the other characters life and adds (0.5*attack) to his own life.
-# train() - increases both your attack and life points by 2.
-# roar() - accepts another Character instance as a parameter and subtracts their attack points by 3.
-
 class Warrior(Character):
     __default_catch_phrase = "Battle Forged, Honor Tempered"
     __train_att_inc = 2
@@ -129,14 +105,6 @@ class Warrior(Character):
         other_char.attack += Warrior.__roar_att_dec
 
 
-
-# Mage:
-# curse() – accepts another Character instance as a parameter and subtracts their attack points by 2.
-# summon() - increases attack attribute by 3 points.
-# cast_spell() - accepts another Character instance as a parameter and subtracts attack/
-# life to the other character’s life points (eg if your attack is 20 and life is 5 you will subtract 4 life points).
-
-
 class Mage(Character):
     __default_catch_phrase = "A Spark of Genius, a Blast of Magic"
     __curse_att_dec = -2
@@ -161,58 +129,138 @@ class Mage(Character):
         other_char.life -= self.attack
 
 
-class Player:
-    def __init__(self, name, type, char=None) -> None:
-        self.name = name
-        self.type = type
-        self.char = char
-
-    def __repr__(self) -> str:
-        return f"Player({self.name}, {self.type}, {self.char})"
+class Interface:
+    @staticmethod
+    def display_menu(options):
+        for i, option in enumerate(options, 1):
+            print(f"{i}. {option}")
     
-    def choose_char(self):
-        raise NotImplementedError
-    
-    def choose_move(self):
-        raise NotImplementedError
-
-class HumanPlayer(Player):
-    def __init__(self, name) -> None:
-        super().__init__(name, "human")
-    
-    def choose_char(self, available_chars):
+    @staticmethod
+    def get_user_choice(max_choice):
         while True:
             try:
-                chosen_char = int(input())
-                if chosen_char in available_chars:
-                    self.char = available_chars[chosen_char]()
-                    return
+                choice = int(input("Enter your choice: "))
+                if 1 <= choice <= max_choice:
+                    return choice
+                else:
+                    print(f"Please enter a number between 1 and {max_choice}")
             except ValueError:
-                pass
+                print("Please enter a valid number")
 
-            print("Invalid input. Try again.")
+    @staticmethod
+    def display_battle_status(player, opponent):
+        print(f"\n{player.name}: Life - {player.life}, Attack - {player.attack}")
+        print(f"{opponent.name}: Life - {opponent.life}, Attack - {opponent.attack}\n")
 
-    def choose_move(self):
-        available_moves = {i: move for i, move in enumerate(self.char._available_moves)}
-        print("Choose a move: {}".format([f"{i}: {move}" for i, move in available_moves.items()]))
-        while True:
-            try:
-                chosen_move = int(input())
-                if chosen_move in available_moves:
-                    return available_moves[chosen_move]
-            except ValueError:
-                pass
 
-            print("Invalid input. Try again.")
+class HumanPlayer:
+    def __init__(self, character):
+        self.character = character
+
+    def choose_action(self):
+        print(f"\n{self.character.name}'s turn:")
+        Interface.display_menu(self.character._available_moves)
+        choice = Interface.get_user_choice(len(self.character._available_moves))
+        return self.character._available_moves[choice - 1]
+
+
+class PCPlayer:
+    def __init__(self, character):
+        self.character = character
+
+    def choose_action(self):
+        return random.choice(self.character._available_moves)
+
+
+class Battle:
+    def __init__(self, player1, player2):
+        self.player1 = player1
+        self.player2 = player2
+
+    def start_battle(self):
+        print(f"Battle starts between {self.player1.character.name} and {self.player2.character.name}!")
+        
+        while self.player1.character.life > 0 and self.player2.character.life > 0:
+            Interface.display_battle_status(self.player1.character, self.player2.character)
+            
+            # Player 1's turn
+            action = self.player1.choose_action(self.player2.character)
+            self.perform_action(self.player1.character, self.player2.character, action)
+            
+            if self.player2.character.life <= 0:
+                break
+            
+            # Player 2's turn
+            action = self.player2.choose_action(self.player1.character)
+            self.perform_action(self.player2.character, self.player1.character, action)
+        
+        self.announce_winner()
+
+    def perform_action(self, attacker, defender, action):
+        if action == 'basic_attack':
+            attacker.basic_attack(defender)
+        elif hasattr(attacker, action):
+            if action in ['meditate', 'animal_help', 'train', 'summon']:
+                getattr(attacker, action)()
+            else:
+                getattr(attacker, action)(defender)
+        else:
+            print(f"Invalid action: {action}")
+
+    def announce_winner(self):
+        if self.player1.character.life <= 0:
+            winner = self.player2.character.name
+            loser = self.player1.character.name
+        else:
+            winner = self.player1.character.name
+            loser = self.player2.character.name
+        
+        print(f"\nBattle over! {winner} defeats {loser}!")
+
+
+def choose_player_type(player_number):
+    print(f"\nChoose player {player_number} type:")
+    Interface.display_menu(["Human", "PC"])
+    choice = Interface.get_user_choice(2)
+    return "Human" if choice == 1 else "PC"
+
+def create_player(player_type, player_number):
+    if player_type == "Human":
+        print(f"\nPlayer {player_number}, choose your character:")
+        Interface.display_menu(Character._available_chars)
+        char_choice = Interface.get_user_choice(len(Character._available_chars))
+        char_class = globals()[Character._available_chars[char_choice - 1]]
+        
+        player_name = input(f"Enter Player {player_number}'s character name: ")
+        character = char_class(player_name)
+        return HumanPlayer(character)
+    else:
+        fake = faker.Faker()
+        pc_char_class = globals()[random.choice(Character._available_chars)]
+        pc_character = pc_char_class(fake.name())
+        return PCPlayer(pc_character)
+
+def main():
+    print("Welcome to the Battle!")
     
+    # Player 1 selection
+    player1_type = choose_player_type(1)
+    player1 = create_player(player1_type, 1)
+    
+    # Player 2 selection
+    player2_type = choose_player_type(2)
+    player2 = create_player(player2_type, 2)
+    
+    # Start the battle
+    battle = Battle(player1, player2)
+    battle.start_battle()
 
-class ComputerPlayer(Player):
-    def __init__(self, name) -> None:
-        super().__init__(name, "computer")
+    # Ask if the players want to play again
+    play_again = input("\nDo you want to play again? (yes/no): ").lower().strip()
+    if play_again == 'yes':
+        main()
+    else:
+        print("Thanks for playing!")
 
-    def choose_char(self, available_chars):
-        self.char = random.choice(available_chars)()
-
-
-def duel():
-    pass
+if __name__ == "__main__":
+    main()
