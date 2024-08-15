@@ -39,6 +39,7 @@ def main():
         else:
             print("Invalid choice. Please choose again.")
     print_result(results)
+    print('Thank you for playing!')
 
 if __name__ == '__main__':
     main()
