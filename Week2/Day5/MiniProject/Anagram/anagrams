@@ -1,0 +1,40 @@
+from anagram_checker import AnagramChecker
+
+def main():
+    anagram_checker = AnagramChecker('sowpods.txt')
+    anagram_checker.compute_anagrams()
+
+    while True:
+        print("Menu:")
+        print("1. Input a word")
+        print("2. Exit")
+
+        choice = input("Choose an option: ")
+        if choice == "2":
+            break
+        elif choice == "1":
+            word = input("Enter a word: ")
+
+            if len(word.split()) > 1:
+                print("Error: Only a single word is allowed.")
+                continue
+
+            word = word.strip().lower()
+            if not word.isalpha():
+                print("Error: Only alphabetic characters are allowed.")
+                continue
+
+            if not anagram_checker.is_valid_word(word):
+                print(f"'{word}' is not a valid word.")
+                continue
+
+            anagrams = anagram_checker.get_anagrams_pre_computed(word, include=False)
+
+            print(f"\nYOUR WORD: '{word}'")
+            print(f"This is a valid English word.")
+            print(f"Anagrams for your word: {', '.join(anagrams)}")
+        else:
+            print("Invalid choice. Please choose again.")
+
+if __name__ == "__main__":
+    main()
