@@ -35,6 +35,8 @@ VALUES ('Benichou', 'Marc', '02/11/1998'),
     ('Grez', 'David', '14/06/2003'),
     ('Simpson', 'Omer', '03/10/1980');
 
+INSERT INTO students (last_name, first_name, birth_date)
+VALUES ('Johnson', 'Andy', '01/01/2000');
 
 -- Fetch all of the data from the table.
 select * from students;
