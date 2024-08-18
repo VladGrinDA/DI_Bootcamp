@@ -29,7 +29,7 @@ from collections import deque
 import random
 
 
-print('\n\nExercise 2')
+print("\n\nExercise 2")
 
 class Card:
     def __init__(self, suit: str, value: str) -> None:
@@ -62,7 +62,7 @@ class Deck:
         if reset:
             self.reset()
         if len(self) != 52:
-            print(f'Deck should have 52 card but currently it has {len(self)}.')
+            print(f"Deck should have 52 card but currently it has {len(self)}.")
 
         random.shuffle(self.cards)
 
