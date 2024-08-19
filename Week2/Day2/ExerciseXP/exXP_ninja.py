@@ -8,12 +8,17 @@ class Cell:
     def __str__(self):
         return "█" if self.is_alive else " "
 
+    def __bool__(self):
+        return bool(self.is_alive)
 
 class Board:
-    def __init__(self, size_x, size_y):
+    def __init__(self):
         self.board = [[Cell() for _ in range(size_x)] for _ in range(size_y)]
         self.size_x = size_x
         self.size_y = size_y
+
+    @classmethod
+    def from_2d_array(cls, array):
 
 
 class GOL:
@@ -31,6 +36,8 @@ class GOL:
     def print_board(self):
         for row in self.board:
             print("".join([str(cell) for cell in row]))
+
+    def get_adjacent(self, x, y):
 
     def next_state(self):
         new_state = []
