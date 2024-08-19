@@ -15,7 +15,7 @@ ADD COLUMN price NUMERIC NOT NULL;
 
 INSERT INTO items (item_name, price)
 VALUES ('Small Desk', 100),
-    ('Large desk', 300),
+    ('Large Desk', 300),
     ('Fan', 80);
 
 select * from items;
