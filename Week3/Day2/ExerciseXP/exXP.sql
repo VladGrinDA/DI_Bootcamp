@@ -1,4 +1,3 @@
--- Active: 1723968844525@@127.0.0.1@5432@dvdrental@public
 
 -- 🌟 Exercise 1 : Items and customers
 -- Instructions
