@@ -17,7 +17,7 @@ from film
 where rating in ('G', 'PG-13')
 and "length" / 60 < 2
 and rental_rate < 3
-order by title; 
+order by title;
 
 #   Find a customer in the customer table, and change his/her details to your details, using SQL UPDATE.
 select * from customer;
