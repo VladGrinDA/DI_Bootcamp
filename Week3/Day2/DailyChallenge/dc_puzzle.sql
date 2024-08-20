@@ -26,26 +26,35 @@ INSERT INTO SecondTab
 
 SELECT * FROM SecondTab;
 
+-- q1
 -- Prediction: Count rows from FirstTab where id is not NULL. So it shoud return 3
 SELECT COUNT(*) 
 FROM FirstTab AS ft WHERE ft.id NOT IN (SELECT id FROM SecondTab WHERE id IS NULL) -- 0
 
+-- q2
 -- Prediction: Last one was a suprise. If condition including null returns null then the output shold be 2
 SELECT COUNT(*) 
 FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 ) -- 2
 
+-- q3
 -- Prediction: i hope it's 4
 SELECT COUNT(*) 
 FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab ) -- 0
 
+
+
 -- OKAY. NOW I SEE
 select 6 in (NULL); -- NULL;
-select 6 in (5, NULL); -- NULL
-select 5 in (5, NULL); -- true
+select 6 not in (5, NULL); -- NULL
+select 5 in (5,  NULL); -- true
+select 5 in (NULL, 5); -- true
 select 5 not in (5, NULL); -- false
 
 select 5 + NULL; -- NULL
 
+-- q4
 -- Prediction: At that point I feel like you must have abilities to see the future. I've acquired some so the answer is 2
 SELECT COUNT(*) 
 FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL ) -- 2
+
+
