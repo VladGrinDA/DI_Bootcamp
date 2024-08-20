@@ -68,7 +68,7 @@ where title ilike 'sh%'
 -- Write a query which will find the 10 cheapest movies.
 select * from film
 order by rental_rate
-limit 20;
+limit 10;
 
 -- Not satisfied with the results. Write a query which will find the next 10 cheapest movies.
 -- Bonus: Try to not use LIMIT.
