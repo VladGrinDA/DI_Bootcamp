@@ -128,8 +128,8 @@ select DISTINCT film_id
     , title
     , rental_rate
 from rental
-    join inventory using (inventory_id)
-    join film as f using (film_id)
+join inventory using (inventory_id)
+join film as f using (film_id)
 where return_date is null
 ORDER BY rental_rate desc
 limit 30;
