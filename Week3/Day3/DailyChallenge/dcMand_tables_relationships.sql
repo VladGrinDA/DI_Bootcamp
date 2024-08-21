@@ -82,6 +82,9 @@ create table student (
 )
 
 INSERT INTO student ("name", "age") VALUES
+    ('John', 16)
+
+INSERT INTO student ("name", "age") VALUES
     ('John', 12),
     ('Lera', 11),
     ('Patrick', 10),
