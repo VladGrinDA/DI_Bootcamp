@@ -106,7 +106,8 @@ GROUP BY rand_int;
 update film 
 set language_id = least(floor(random() * 6 + 1), 6)
 where film_id in (select film_id from film order by random() limit 50)
-returning *;
+returning *
+;
 
 -- Which foreign keys (references) are defined for the customer table? How does this affect the 
 -- way in which we INSERT into the customer table?
