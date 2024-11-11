@@ -14,3 +14,4 @@ test.*
 *.rar
 *.7z
 *.tar
+*.db
