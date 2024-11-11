@@ -1,0 +1,1754 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0910.0334                               -->
+<workbook original-version='18.1' source-build='2024.2.3 (20242.24.0910.0334)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Stock+ (Acropolis_Retail_data)' inline='true' name='federated.181tpna05c96ne1gx6kit0w7r8fr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Acropolis_Retail_data' name='excel-direct.0fxvzvo10igr7011fd4p31fhp9m1'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/iason.prassides/Desktop/Case Study - Inventory Analysis in Tableau/Datasets/Acropolis_Retail_data.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.0fxvzvo10igr7011fd4p31fhp9m1' name='Orders' table='[Orders$]' type='table'>
+          <columns gridOrigin='A1:E13334:no:A1:E13334:0' header='yes' outcome='2'>
+            <column datatype='integer' name='Invoice_No' ordinal='0' />
+            <column datatype='string' name='SKU-ID' ordinal='1' />
+            <column datatype='integer' name='Quantity' ordinal='2' />
+            <column datatype='date' name='Invoice_Date' ordinal='3' />
+            <column datatype='string' name='Customer_Country' ordinal='4' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='excel-direct.0fxvzvo10igr7011fd4p31fhp9m1' name='Stock' table='[Stock$]' type='table'>
+            <columns gridOrigin='A1:K105:no:A1:K105:0' header='yes' outcome='2'>
+              <column datatype='string' name='SKU-ID' ordinal='0' />
+              <column datatype='string' name='Description' ordinal='1' />
+              <column datatype='integer' name='2020_units_sold' ordinal='2' />
+              <column datatype='integer' name='2021_start_stock' ordinal='3' />
+              <column datatype='real' name='Raw_Material_Cost' ordinal='4' />
+              <column datatype='real' name='Factory_Labor_Costs' ordinal='5' />
+              <column datatype='real' name='Factory_Equipment_Rent_Costs' ordinal='6' />
+              <column datatype='real' name='Distribution_Costs' ordinal='7' />
+              <column datatype='real' name='Advertisement_Costs' ordinal='8' />
+              <column datatype='real' name='Retail_Price' ordinal='9' />
+              <column datatype='string' name='Category' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.0fxvzvo10igr7011fd4p31fhp9m1' name='Orders' table='[Orders$]' type='table'>
+            <columns gridOrigin='A1:E13334:no:A1:E13334:0' header='yes' outcome='2'>
+              <column datatype='integer' name='Invoice_No' ordinal='0' />
+              <column datatype='string' name='SKU-ID' ordinal='1' />
+              <column datatype='integer' name='Quantity' ordinal='2' />
+              <column datatype='date' name='Invoice_Date' ordinal='3' />
+              <column datatype='string' name='Customer_Country' ordinal='4' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[2020_units_sold]' value='[Stock].[2020_units_sold]' />
+          <map key='[2021_start_stock]' value='[Stock].[2021_start_stock]' />
+          <map key='[Advertisement_Costs]' value='[Stock].[Advertisement_Costs]' />
+          <map key='[Category]' value='[Stock].[Category]' />
+          <map key='[Customer_Country]' value='[Orders].[Customer_Country]' />
+          <map key='[Description]' value='[Stock].[Description]' />
+          <map key='[Distribution_Costs]' value='[Stock].[Distribution_Costs]' />
+          <map key='[Factory_Equipment_Rent_Costs]' value='[Stock].[Factory_Equipment_Rent_Costs]' />
+          <map key='[Factory_Labor_Costs]' value='[Stock].[Factory_Labor_Costs]' />
+          <map key='[Invoice_Date]' value='[Orders].[Invoice_Date]' />
+          <map key='[Invoice_No]' value='[Orders].[Invoice_No]' />
+          <map key='[Quantity]' value='[Orders].[Quantity]' />
+          <map key='[Raw_Material_Cost]' value='[Stock].[Raw_Material_Cost]' />
+          <map key='[Retail_Price]' value='[Stock].[Retail_Price]' />
+          <map key='[SKU-ID (Orders)]' value='[Orders].[SKU-ID]' />
+          <map key='[SKU-ID]' value='[Stock].[SKU-ID]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:K105:no:A1:K105:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Orders]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E13334:no:A1:E13334:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SKU-ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SKU-ID]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>SKU-ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Description]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2020_units_sold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[2020_units_sold]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>2020_units_sold</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2021_start_stock</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[2021_start_stock]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>2021_start_stock</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Raw_Material_Cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Raw_Material_Cost]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Raw_Material_Cost</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Factory_Labor_Costs</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Factory_Labor_Costs]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Factory_Labor_Costs</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Factory_Equipment_Rent_Costs</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Factory_Equipment_Rent_Costs]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Factory_Equipment_Rent_Costs</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Distribution_Costs</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Distribution_Costs]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Distribution_Costs</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Advertisement_Costs</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Advertisement_Costs]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Advertisement_Costs</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Retail_Price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Retail_Price]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Retail_Price</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Category]</local-name>
+            <parent-name>[Stock]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Invoice_No</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Invoice_No]</local-name>
+            <parent-name>[Orders]</parent-name>
+            <remote-alias>Invoice_No</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SKU-ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SKU-ID (Orders)]</local-name>
+            <parent-name>[Orders]</parent-name>
+            <remote-alias>SKU-ID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Quantity]</local-name>
+            <parent-name>[Orders]</parent-name>
+            <remote-alias>Quantity</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Invoice_Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Invoice_Date]</local-name>
+            <parent-name>[Orders]</parent-name>
+            <remote-alias>Invoice_Date</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer_Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Customer_Country]</local-name>
+            <parent-name>[Orders]</parent-name>
+            <remote-alias>Customer_Country</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='2020 Units Sold' datatype='integer' name='[2020_units_sold]' role='measure' type='quantitative' />
+      <column caption='2021 Start Stock' datatype='integer' name='[2021_start_stock]' role='measure' type='quantitative' />
+      <column caption='Advertisement Costs' datatype='real' name='[Advertisement_Costs]' role='measure' type='quantitative' />
+      <column caption='Total COGS 2021' datatype='real' name='[Calculation_2514767852686495744]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs])*[Calculation_3046755558938161153]' />
+      </column>
+      <column caption='Revenue 2020' datatype='real' name='[Calculation_2514767852691898369]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[2020_units_sold]*[Retail_Price]' />
+      </column>
+      <column caption='Profit 2020' datatype='real' name='[Calculation_2514767852691972098]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_2514767852691898369]-[Total COGS 2021 (copy)_4810337027684888577]' />
+      </column>
+      <column aggregation='Sum' caption='Invoice Year' datatype='integer' name='[Calculation_3046755558937657344]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='YEAR([Invoice_Date])' />
+      </column>
+      <column caption='Total Orders 2021' datatype='integer' name='[Calculation_3046755558938161153]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2021&#10;THEN [Quantity]&#10;END)}' />
+      </column>
+      <column caption='Total Orders 2022' datatype='integer' name='[Calculation_3046755558938611714]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2022&#10;THEN [Quantity]&#10;END)}' />
+      </column>
+      <column caption='2021 End Stock' datatype='integer' name='[Calculation_3046755558941241347]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[2021_start_stock] - [Calculation_3046755558938161153]' />
+      </column>
+      <column caption='Avg Inventory 2021' datatype='real' name='[Calculation_3046755558941454340]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([2021_start_stock] + [Calculation_3046755558941241347])*[Total COGS 2021 (copy)_4810337027684319232]/2' />
+      </column>
+      <column caption='Inventory Turnover 2021' datatype='real' name='[Calculation_3046755558941519877]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_2514767852686495744] / [Calculation_3046755558941454340]' />
+      </column>
+      <column caption='Revenue 2021' datatype='real' name='[Calculation_3046755558943391750]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_3046755558938161153] * [Retail_Price]' />
+      </column>
+      <column caption='Revenue 2021 Percent' datatype='real' name='[Calculation_3046755558943715335]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_3046755558943391750])/ TOTAL(SUM([Calculation_3046755558943391750])) * 100'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Revenue 2020 Percent' datatype='real' name='[Calculation_3046755558943883272]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_2514767852691898369])/ TOTAL(SUM([Calculation_2514767852691898369])) * 100'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Running Total Revenue 2021 Percent' datatype='real' name='[Calculation_3046755558950260745]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM([Calculation_3046755558943715335])'>
+          <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Description]' ordering-type='Field' />
+        </calculation>
+      </column>
+      <column caption='ABC 2021' datatype='string' name='[Calculation_3046755558950363146]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_3046755558950260745]&lt;=70 THEN &apos;A [High Value]&apos;&#10;ELSEIF [Calculation_3046755558950260745]&lt;=90 THEN &apos;B [Medium Value]&apos;&#10;ELSE &apos;C [Low Value]&apos;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Customer ID' datatype='string' name='[Customer_Country - Split 1]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Customer_Country]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [Customer_Country], &quot;_&quot;, 1 ) )' />
+      </column>
+      <column caption='Country' datatype='string' name='[Customer_Country - Split 2]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Customer_Country]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [Customer_Country], &quot;_&quot;, 2 ) )' />
+      </column>
+      <column caption='Customer Country' datatype='string' hidden='true' name='[Customer_Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+      <column caption='Distribution Costs' datatype='real' name='[Distribution_Costs]' role='measure' type='quantitative' />
+      <column caption='Factory Equipment Rent Costs' datatype='real' name='[Factory_Equipment_Rent_Costs]' role='measure' type='quantitative' />
+      <column caption='Factory Labor Costs' datatype='real' name='[Factory_Labor_Costs]' role='measure' type='quantitative' />
+      <column caption='Invoice Date' datatype='date' name='[Invoice_Date]' role='dimension' type='ordinal' />
+      <column caption='Invoice No' datatype='integer' name='[Invoice_No]' role='measure' type='quantitative' />
+      <column caption='Raw Material Cost' datatype='real' name='[Raw_Material_Cost]' role='measure' type='quantitative' />
+      <column caption='Retail Price' datatype='real' name='[Retail_Price]' role='measure' type='quantitative' />
+      <column caption='Sku-Id' datatype='string' name='[SKU-ID]' role='dimension' type='nominal' />
+      <column caption='Total COGS 2021 (copy)' datatype='real' name='[Total COGS 2021 (copy)_412923802894987264]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs])*[Calculation_3046755558938161153]' />
+      </column>
+      <column caption='Direct Costs' datatype='real' name='[Total COGS 2021 (copy)_4810337027684319232]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs]' />
+      </column>
+      <column caption='Total COGS 2020' datatype='real' name='[Total COGS 2021 (copy)_4810337027684888577]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs])*[2020_units_sold]' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Orders' datatype='table' name='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Stock' datatype='table' name='[__tableau_internal_object_id__].[Stock_4671C6A82EC14D61B5769BA57B3ABB13]' role='measure' type='quantitative' />
+      <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_3046755558943715335]' derivation='User' name='[usr:Calculation_3046755558943715335:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' />
+      </column-instance>
+      <column-instance column='[Calculation_3046755558943715335]' derivation='User' name='[usr:Calculation_3046755558943715335:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' ordering-type='Field' />
+      </column-instance>
+      <column-instance column='[Calculation_3046755558943883272]' derivation='User' name='[usr:Calculation_3046755558943883272:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' />
+      </column-instance>
+      <column-instance column='[Calculation_3046755558943883272]' derivation='User' name='[usr:Calculation_3046755558943883272:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' ordering-type='Field' />
+      </column-instance>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Datasources/Stock+ (Acropolis_Retail_data).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='12/16/2022 02:14:50 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41' table='[Extract].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='Stock_4671C6A82EC14D61B5769BA57B3ABB13' table='[Extract].[Stock_4671C6A82EC14D61B5769BA57B3ABB13]' type='table' />
+            <relation name='Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41' table='[Extract].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[2020_units_sold]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[2020_units_sold]' />
+            <map key='[2021_start_stock]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[2021_start_stock]' />
+            <map key='[Advertisement_Costs]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Advertisement_Costs]' />
+            <map key='[Category]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Category]' />
+            <map key='[Customer_Country]' value='[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41].[Customer_Country]' />
+            <map key='[Description]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Description]' />
+            <map key='[Distribution_Costs]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Distribution_Costs]' />
+            <map key='[Factory_Equipment_Rent_Costs]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Factory_Equipment_Rent_Costs]' />
+            <map key='[Factory_Labor_Costs]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Factory_Labor_Costs]' />
+            <map key='[Invoice_Date]' value='[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41].[Invoice_Date]' />
+            <map key='[Invoice_No]' value='[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41].[Invoice_No]' />
+            <map key='[Quantity]' value='[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41].[Quantity]' />
+            <map key='[Raw_Material_Cost]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Raw_Material_Cost]' />
+            <map key='[Retail_Price]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[Retail_Price]' />
+            <map key='[SKU-ID (Orders)]' value='[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41].[SKU-ID]' />
+            <map key='[SKU-ID]' value='[Stock_4671C6A82EC14D61B5769BA57B3ABB13].[SKU-ID]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='Stock+ (Acropolis_Retail_data)' increment-value='%null%' refresh-type='create' rows-inserted='13437' timestamp-start='2022-12-16 14:14:50.605' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>SKU-ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SKU-ID]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>SKU-ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Stock</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>104</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Description]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Description</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Stock</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>104</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>2020_units_sold</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[2020_units_sold]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>2020_units_sold</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Stock</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>102</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>2021_start_stock</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[2021_start_stock]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>2021_start_stock</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Stock</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>98</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Raw_Material_Cost</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Raw_Material_Cost]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Raw_Material_Cost</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Stock</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>78</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Factory_Labor_Costs</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Factory_Labor_Costs]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Factory_Labor_Costs</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Stock</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>85</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Factory_Equipment_Rent_Costs</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Factory_Equipment_Rent_Costs]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Factory_Equipment_Rent_Costs</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Stock</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>63</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Distribution_Costs</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Distribution_Costs]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Distribution_Costs</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Stock</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>102</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Advertisement_Costs</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Advertisement_Costs]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Advertisement_Costs</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Stock</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>102</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Retail_Price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Retail_Price]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Retail_Price</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Stock</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>57</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Category]</local-name>
+              <parent-name>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</parent-name>
+              <remote-alias>Category</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Stock</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Stock_4671C6A82EC14D61B5769BA57B3ABB13]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Invoice_No</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Invoice_No]</local-name>
+              <parent-name>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</parent-name>
+              <remote-alias>Invoice_No</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Orders</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4010</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SKU-ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SKU-ID (Orders)]</local-name>
+              <parent-name>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</parent-name>
+              <remote-alias>SKU-ID</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Orders</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>115</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Quantity</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Quantity]</local-name>
+              <parent-name>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</parent-name>
+              <remote-alias>Quantity</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Orders</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>84</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Invoice_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Invoice_Date]</local-name>
+              <parent-name>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</parent-name>
+              <remote-alias>Invoice_Date</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Orders</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>415</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Customer_Country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Customer_Country]</local-name>
+              <parent-name>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</parent-name>
+              <remote-alias>Customer_Country</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Orders</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3497</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943883272:qk:1]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:2]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943883272:qk:2]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:1]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Orders' id='Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41'>
+            <properties context=''>
+              <relation connection='excel-direct.0fxvzvo10igr7011fd4p31fhp9m1' name='Orders' table='[Orders$]' type='table'>
+                <columns gridOrigin='A1:E13334:no:A1:E13334:0' header='yes' outcome='2'>
+                  <column datatype='integer' name='Invoice_No' ordinal='0' />
+                  <column datatype='string' name='SKU-ID' ordinal='1' />
+                  <column datatype='integer' name='Quantity' ordinal='2' />
+                  <column datatype='date' name='Invoice_Date' ordinal='3' />
+                  <column datatype='string' name='Customer_Country' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41' table='[Extract].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' type='table' />
+            </properties>
+          </object>
+          <object caption='Stock' id='Stock_4671C6A82EC14D61B5769BA57B3ABB13'>
+            <properties context=''>
+              <relation connection='excel-direct.0fxvzvo10igr7011fd4p31fhp9m1' name='Stock' table='[Stock$]' type='table'>
+                <columns gridOrigin='A1:K105:no:A1:K105:0' header='yes' outcome='2'>
+                  <column datatype='string' name='SKU-ID' ordinal='0' />
+                  <column datatype='string' name='Description' ordinal='1' />
+                  <column datatype='integer' name='2020_units_sold' ordinal='2' />
+                  <column datatype='integer' name='2021_start_stock' ordinal='3' />
+                  <column datatype='real' name='Raw_Material_Cost' ordinal='4' />
+                  <column datatype='real' name='Factory_Labor_Costs' ordinal='5' />
+                  <column datatype='real' name='Factory_Equipment_Rent_Costs' ordinal='6' />
+                  <column datatype='real' name='Distribution_Costs' ordinal='7' />
+                  <column datatype='real' name='Advertisement_Costs' ordinal='8' />
+                  <column datatype='real' name='Retail_Price' ordinal='9' />
+                  <column datatype='string' name='Category' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Stock_4671C6A82EC14D61B5769BA57B3ABB13' table='[Extract].[Stock_4671C6A82EC14D61B5769BA57B3ABB13]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[SKU-ID]' />
+              <expression op='[SKU-ID (Orders)]' />
+            </expression>
+            <first-end-point object-id='Stock_4671C6A82EC14D61B5769BA57B3ABB13' />
+            <second-end-point object-id='Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='ABC'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column aggregation='Sum' caption='Invoice Year' datatype='integer' name='[Calculation_3046755558937657344]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='YEAR([Invoice_Date])' />
+            </column>
+            <column caption='Total Orders 2021' datatype='integer' name='[Calculation_3046755558938161153]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2021&#10;THEN [Quantity]&#10;END)}' />
+            </column>
+            <column caption='Revenue 2021' datatype='real' name='[Calculation_3046755558943391750]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_3046755558938161153] * [Retail_Price]' />
+            </column>
+            <column caption='Revenue 2021 Percent' datatype='real' name='[Calculation_3046755558943715335]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Calculation_3046755558943391750])/ TOTAL(SUM([Calculation_3046755558943391750])) * 100'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Running Total Revenue 2021 Percent' datatype='real' name='[Calculation_3046755558950260745]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RUNNING_SUM([Calculation_3046755558943715335])'>
+                <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Description]' ordering-type='Field' />
+              </calculation>
+            </column>
+            <column caption='ABC 2021' datatype='string' name='[Calculation_3046755558950363146]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_3046755558950260745]&lt;=70 THEN &apos;A [High Value]&apos;&#10;ELSEIF [Calculation_3046755558950260745]&lt;=90 THEN &apos;B [Medium Value]&apos;&#10;ELSE &apos;C [Low Value]&apos;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+            <column caption='Invoice Date' datatype='date' name='[Invoice_Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.false...column caption='Orders' datatype='integer' name='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' role='measure' type='quantitative' />
+            <column caption='Retail Price' datatype='real' name='[Retail_Price]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='Orders' datatype='table' name='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_3046755558943715335]' derivation='User' name='[usr:Calculation_3046755558943715335:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Calculation_3046755558950260745]' derivation='User' name='[usr:Calculation_3046755558950260745:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Description]' ordering-type='Field' />
+              <table-calc field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Calculation_3046755558943715335]' ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Calculation_3046755558950363146]' derivation='User' name='[usr:Calculation_3046755558950363146:nk:2]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Columns' />
+              <table-calc field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Calculation_3046755558950260745]' ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Description]' ordering-type='Field' />
+              <table-calc field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Calculation_3046755558943715335]' ordering-type='Columns' />
+            </column-instance>
+          </datasource-dependencies>
+          <computed-sort column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' direction='DESC' using='[federated.181tpna05c96ne1gx6kit0w7r8fr].[__tableau_internal_object_id__].[cnt:Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='430' />
+                <format attr='maxwidth' value='430' />
+                <format attr='minheight' value='2080' />
+                <format attr='maxheight' value='2080' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:1]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558950260745:qk:3]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558950363146:nk:2]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]</rows>
+        <cols>([federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:1] + [federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558950260745:qk:3])</cols>
+      </table>
+      <simple-id uuid='{4867B49D-05CF-4029-9C3F-676B9999A800}' />
+    </worksheet>
+    <worksheet name='COGS 2020'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column caption='2020 Units Sold' datatype='integer' name='[2020_units_sold]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Factory Equipment Rent Costs' datatype='real' name='[Factory_Equipment_Rent_Costs]' role='measure' type='quantitative' />
+            <column caption='Factory Labor Costs' datatype='real' name='[Factory_Labor_Costs]' role='measure' type='quantitative' />
+            <column caption='Raw Material Cost' datatype='real' name='[Raw_Material_Cost]' role='measure' type='quantitative' />
+            <column caption='Total COGS 2020' datatype='real' name='[Total COGS 2021 (copy)_4810337027684888577]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs])*[2020_units_sold]' />
+            </column>
+            <column-instance column='[Total COGS 2021 (copy)_4810337027684888577]' derivation='Avg' name='[avg:Total COGS 2021 (copy)_4810337027684888577:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[avg:Total COGS 2021 (copy)_4810337027684888577:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Category:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{596A9185-8B2C-471B-9979-61B832FE71F9}' />
+    </worksheet>
+    <worksheet name='Inventory Turnover'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column caption='2021 Start Stock' datatype='integer' name='[2021_start_stock]' role='measure' type='quantitative' />
+            <column caption='Total COGS 2021' datatype='real' name='[Calculation_2514767852686495744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs])*[Calculation_3046755558938161153]' />
+            </column>
+            <column aggregation='Sum' caption='Invoice Year' datatype='integer' name='[Calculation_3046755558937657344]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='YEAR([Invoice_Date])' />
+            </column>
+            <column caption='Total Orders 2021' datatype='integer' name='[Calculation_3046755558938161153]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2021&#10;THEN [Quantity]&#10;END)}' />
+            </column>
+            <column caption='2021 End Stock' datatype='integer' name='[Calculation_3046755558941241347]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[2021_start_stock] - [Calculation_3046755558938161153]' />
+            </column>
+            <column caption='Avg Inventory 2021' datatype='real' name='[Calculation_3046755558941454340]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([2021_start_stock] + [Calculation_3046755558941241347])*[Total COGS 2021 (copy)_4810337027684319232]/2' />
+            </column>
+            <column caption='Inventory Turnover 2021' datatype='real' name='[Calculation_3046755558941519877]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_2514767852686495744] / [Calculation_3046755558941454340]' />
+            </column>
+            <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+            <column caption='Factory Equipment Rent Costs' datatype='real' name='[Factory_Equipment_Rent_Costs]' role='measure' type='quantitative' />
+            <column caption='Factory Labor Costs' datatype='real' name='[Factory_Labor_Costs]' role='measure' type='quantitative' />
+            <column caption='Invoice Date' datatype='date' name='[Invoice_Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column caption='Raw Material Cost' datatype='real' name='[Raw_Material_Cost]' role='measure' type='quantitative' />
+            <column caption='Direct Costs' datatype='real' name='[Total COGS 2021 (copy)_4810337027684319232]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs]' />
+            </column>
+            <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[2021_start_stock]' derivation='Sum' name='[sum:2021_start_stock:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3046755558941519877]' derivation='Sum' name='[sum:Calculation_3046755558941519877:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Calculation_3046755558941519877])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Description:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_3046755558941519877:qk]' />
+              <color column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_3046755558941519877:qk]' />
+              <tooltip column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:2021_start_stock:qk]' />
+              <text column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{AC7D2DEC-3C0F-4936-8DEA-8947E0C0AB5D}' />
+    </worksheet>
+    <worksheet name='Orders Check'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column caption='Country' datatype='string' name='[Customer_Country - Split 2]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.181tpna05c96ne1gx6kit0w7r8fr].[Customer_Country]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [Customer_Country], &quot;_&quot;, 2 ) )' />
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='Orders' datatype='integer' name='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' role='measure' type='quantitative' />
+            <column caption='Customer Country' datatype='string' hidden='true' name='[Customer_Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <_.fcp.ObjectModelTableType.true...column caption='Orders' datatype='table' name='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Customer_Country - Split 2]' derivation='None' name='[none:Customer_Country - Split 2:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Customer_Country - Split 2:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.181tpna05c96ne1gx6kit0w7r8fr].[__tableau_internal_object_id__].[cnt:Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Customer_Country - Split 2:nk]</rows>
+        <cols>[federated.181tpna05c96ne1gx6kit0w7r8fr].[__tableau_internal_object_id__].[cnt:Orders_0DA2CB8188254A1E8BD3CE5DEB5E3D41:qk]</cols>
+      </table>
+      <simple-id uuid='{D478184A-50EB-43D0-8BD1-BF36B2B47272}' />
+    </worksheet>
+    <worksheet name='Revenue Comparison'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column caption='2020 Units Sold' datatype='integer' name='[2020_units_sold]' role='measure' type='quantitative' />
+            <column caption='Revenue 2020' datatype='real' name='[Calculation_2514767852691898369]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[2020_units_sold]*[Retail_Price]' />
+            </column>
+            <column aggregation='Sum' caption='Invoice Year' datatype='integer' name='[Calculation_3046755558937657344]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='YEAR([Invoice_Date])' />
+            </column>
+            <column caption='Total Orders 2021' datatype='integer' name='[Calculation_3046755558938161153]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2021&#10;THEN [Quantity]&#10;END)}' />
+            </column>
+            <column caption='Revenue 2021' datatype='real' name='[Calculation_3046755558943391750]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_3046755558938161153] * [Retail_Price]' />
+            </column>
+            <column caption='Revenue 2021 Percent' datatype='real' name='[Calculation_3046755558943715335]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Calculation_3046755558943391750])/ TOTAL(SUM([Calculation_3046755558943391750])) * 100'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Revenue 2020 Percent' datatype='real' name='[Calculation_3046755558943883272]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Calculation_2514767852691898369])/ TOTAL(SUM([Calculation_2514767852691898369])) * 100'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+            <column caption='Invoice Date' datatype='date' name='[Invoice_Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column caption='Retail Price' datatype='real' name='[Retail_Price]' role='measure' type='quantitative' />
+            <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_3046755558943715335]' derivation='User' name='[usr:Calculation_3046755558943715335:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_3046755558943883272]' derivation='User' name='[usr:Calculation_3046755558943883272:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' ordering-type='Field' />
+            </column-instance>
+          </datasource-dependencies>
+          <manual-sort column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;GROW A FLYTRAP OR SUNFLOWER IN TIN&quot;</bucket>
+              <bucket>&quot;SET OF 6 SOLDIER SKITTLES&quot;</bucket>
+              <bucket>&quot;WOODLAND CHARLOTTE BAG&quot;</bucket>
+              <bucket>&quot;CHILDRENS CUTLERY POLKADOT GREEN&quot;</bucket>
+              <bucket>&quot;DOUGHNUT LIP GLOSS&quot;</bucket>
+              <bucket>&quot;STRAWBERRY CERAMIC TRINKET BOX&quot;</bucket>
+              <bucket>&quot;SWEETHEART RECIPE BOOK STAND&quot;</bucket>
+              <bucket>&quot;VICTORIAN SEWING BOX SMALL&quot;</bucket>
+              <bucket>&quot;CLASSIC METAL BIRDCAGE PLANT HOLDER&quot;</bucket>
+              <bucket>&quot;REGENCY MILK JUG PINK&quot;</bucket>
+              <bucket>&quot;SET OF 4 KNICK KNACK TINS DOILY&quot;</bucket>
+              <bucket>&quot;JUMBO BAG DOLLY GIRL DESIGN&quot;</bucket>
+              <bucket>&quot;HAND WARMER UNION JACK&quot;</bucket>
+              <bucket>&quot;WHITE SPOT RED CERAMIC DRAWER KNOB&quot;</bucket>
+              <bucket>&quot;PIGGY BANK RETROSPOT&quot;</bucket>
+              <bucket>&quot;WOODEN HAPPY BIRTHDAY GARLAND&quot;</bucket>
+              <bucket>&quot;DOLLY GIRL BEAKER&quot;</bucket>
+              <bucket>&quot;3 DRAWER ANTIQUE WHITE WOOD CABINET&quot;</bucket>
+              <bucket>&quot;VICTORIAN  METAL POSTCARD SPRING&quot;</bucket>
+              <bucket>&quot;CHRISTMAS CRAFT TREE TOP ANGEL&quot;</bucket>
+              <bucket>&quot;CHRISTMAS TOILET ROLL&quot;</bucket>
+              <bucket>&quot;GINGHAM RECIPE BOOK BOX&quot;</bucket>
+              <bucket>&quot;PAPER BUNTING VINTAGE PAISLEY&quot;</bucket>
+              <bucket>&quot;SWEETHEART WIRE MAGAZINE RACK&quot;</bucket>
+              <bucket>&quot;I LOVE LONDON BABY GIFT SET&quot;</bucket>
+              <bucket>&quot;ROSE CARAVAN DOORSTOP&quot;</bucket>
+              <bucket>&quot;WHITE WICKER STAR&quot;</bucket>
+              <bucket>&quot;TREASURE TIN BUFFALO BILL&quot;</bucket>
+              <bucket>&quot;DOILEY STORAGE TIN&quot;</bucket>
+              <bucket>&quot;JIGSAW TREE WITH BIRDHOUSE&quot;</bucket>
+              <bucket>&quot;POLYESTER FILLER PAD 45x45cm&quot;</bucket>
+              <bucket>&quot;PICNIC BASKET WICKER 60 PIECES&quot;</bucket>
+              <bucket>&quot;PACK OF 12 VINTAGE CHRISTMAS TISSUE&quot;</bucket>
+              <bucket>&quot;ASSORTED TOFFEE CHOCOLATE&quot;</bucket>
+              <bucket>&quot;MA CAMPAGNE CUTLERY BOX&quot;</bucket>
+              <bucket>&quot;EASTER TIN KEEPSAKE&quot;</bucket>
+              <bucket>&quot;MULTICOLOUR SPRING FLOWER MUG&quot;</bucket>
+              <bucket>&quot;JAZZ HEARTS ADDRESS BOOK&quot;</bucket>
+              <bucket>&quot;FAIRY CAKES NOTEBOOK A7 SIZE&quot;</bucket>
+              <bucket>&quot;SAVE THE PLANET COTTON TOTE BAG&quot;</bucket>
+              <bucket>&quot;3 WHITE CHOC MORRIS BOXED CANDLES&quot;</bucket>
+              <bucket>&quot;MINI TAPES&quot;</bucket>
+              <bucket>&quot;RIBBON REEL FLORA + FAUNA&quot;</bucket>
+              <bucket>&quot;DIAMANTE RING ASSORTED IN BOX.&quot;</bucket>
+              <bucket>&quot;FAIRY DREAMS INCENSE&quot;</bucket>
+              <bucket>&quot;3 RAFFIA RIBBONS VINTAGE CHRISTMAS&quot;</bucket>
+              <bucket>&quot;TRIANGULAR POUFFE VINTAGE&quot;</bucket>
+              <bucket>&quot;SALLE DE BAIN HOOK&quot;</bucket>
+              <bucket>&quot;PORCELAIN BUDAH INCENSE HOLDER&quot;</bucket>
+              <bucket>&quot;BEADED CRYSTAL HEART GREEN ON STICK&quot;</bucket>
+              <bucket>&quot;incorrectly credited C550456 see 47&quot;</bucket>
+              <bucket>&quot;POPART RECT PENCIL SHARPENER ASST&quot;</bucket>
+              <bucket>&quot;FELT EGG COSY BLUE RABBIT&quot;</bucket>
+              <bucket>&quot;WOVEN BERRIES CUSHION COVER&quot;</bucket>
+              <bucket>&quot;PINK POT PLANT CANDLE&quot;</bucket>
+              <bucket>&quot;STEEL SWEETHEART ROUND TABLE CREAM&quot;</bucket>
+              <bucket>&quot;BLACK SQUARE TABLE CLOCK&quot;</bucket>
+              <bucket>&quot;RED DRAGONFLY HELICOPTER&quot;</bucket>
+              <bucket>&quot;FRENCH BLUE METAL DOOR SIGN 2&quot;</bucket>
+              <bucket>&quot;3D SHEET OF DOG STICKERS&quot;</bucket>
+              <bucket>&quot;FAIRY SOAP SOAP HOLDER&quot;</bucket>
+              <bucket>&quot;SUMMER DAISIES BAG CHARM&quot;</bucket>
+              <bucket>&quot;A PRETTY THANK YOU CARD&quot;</bucket>
+              <bucket>&quot;GREEN GOOSE FEATHER TREE 60CM&quot;</bucket>
+              <bucket>&quot;DOILEY BISCUIT TIN&quot;</bucket>
+              <bucket>&quot;PSYCHEDELIC TILE COASTER&quot;</bucket>
+              <bucket>&quot;DOLLCRAFT GIRL AMELIE KIT&quot;</bucket>
+              <bucket>&quot;GYMKHANNA TREASURE BOOK BOX&quot;</bucket>
+              <bucket>&quot;SET OF 4 NAPKIN CHARMS INSTRUMENT&quot;</bucket>
+              <bucket>&quot;ASSORTED TUTTI FRUTTI HEART BOX&quot;</bucket>
+              <bucket>&quot;PEG BAG APPLE DESIGN&quot;</bucket>
+              <bucket>&quot;BLUE FLY SWAT&quot;</bucket>
+              <bucket>&quot;RED BOUDICCA LARGE BRACELET&quot;</bucket>
+              <bucket>&quot;ENAMEL BLUE RIM COFFEE CONTAINER&quot;</bucket>
+              <bucket>&quot;SILVER M.O.P ORBIT DROP EARRINGS&quot;</bucket>
+              <bucket>&quot;POLYESTER FILLER PAD 45x30cm&quot;</bucket>
+              <bucket>&quot;RIDGED GLASS STORAGE JAR CREAM LID&quot;</bucket>
+              <bucket>&quot;YELLOW DRAGONFLY HELICOPTER&quot;</bucket>
+              <bucket>&quot;PEACE SMALL WOOD LETTERS&quot;</bucket>
+              <bucket>&quot;ORIGAMI VANILLA INCENSE CONES&quot;</bucket>
+              <bucket>&quot;MOROCCAN BEATEN METAL DISH LARGE&quot;</bucket>
+              <bucket>&quot;FAN BLACK FRAME&quot;</bucket>
+              <bucket>&quot;SET OF 12 MINI BUNNIES IN A BUCKET&quot;</bucket>
+              <bucket>&quot;PINK GLASS CHUNKY CHARM BRACELET&quot;</bucket>
+              <bucket>&quot;BLACK MEDIUM GLASS CAKE STAND&quot;</bucket>
+              <bucket>&quot;BLACK/WHITE GLASS/SILVER BRACELET&quot;</bucket>
+              <bucket>&quot;LETTER \&quot;M\&quot; BLING KEY RING&quot;</bucket>
+              <bucket>&quot;PINK SMALL GLASS CAKE STAND&quot;</bucket>
+              <bucket>&quot;BLUE CHENILLE SHAGGY CUSHION COVER&quot;</bucket>
+              <bucket>&quot;YELLOW/BLUE RETRO RADIO&quot;</bucket>
+              <bucket>&quot;FLOWER GARLAND NECKLACE RED&quot;</bucket>
+              <bucket>&quot;DIAMANTE HAIR GRIP PACK/2 PERIDOT&quot;</bucket>
+              <bucket>&quot;BLUE WIRE SPIRAL CANDLE HOLDER&quot;</bucket>
+              <bucket>&quot;CLASSIC DIAMANTE EARRINGS SET&quot;</bucket>
+              <bucket>&quot;GREEN DROP EARRINGS W BEAD CLUSTER&quot;</bucket>
+              <bucket>&quot;SET 10 XMAS CARDS &amp; BADGES 17070&quot;</bucket>
+              <bucket>&quot;ANTIQUE OLIVE GREEN FLOWER EARRINGS&quot;</bucket>
+              <bucket>&quot;DIAMANTE NECKLACE&quot;</bucket>
+              <bucket>&quot;RED WHITE SCARF  HOT WATER BOTTLE&quot;</bucket>
+              <bucket>&quot;CHAMPAGNE TRAY BLANK CARD&quot;</bucket>
+              <bucket>&quot;PINK CRYSTAL GUITAR PHONE CHARM&quot;</bucket>
+              <bucket>&quot;PINK MARSHMALLOW SCARF KNITTING KIT&quot;</bucket>
+              <bucket>&quot;PINK HEART DOTS HOT WATER BOTTLE&quot;</bucket>
+              <bucket>&quot;FIRE POLISHED GLASS NECKL BRONZE&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943883272:qk:2]' field-type='quantitative' fold='true' scope='cols' synchronized='true' type='space' />
+            <format attr='display' class='0' field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943883272:qk:2]' scope='cols' value='false' />
+            <format attr='title' class='0' field='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:2]' scope='cols' value='Revenue Percent' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:2]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943883272:qk:2]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.83458560705184937' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]</rows>
+        <cols>([federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943715335:qk:2] + [federated.181tpna05c96ne1gx6kit0w7r8fr].[usr:Calculation_3046755558943883272:qk:2])</cols>
+      </table>
+      <simple-id uuid='{58ACD7ED-4732-4E49-94EE-2270976A6514}' />
+    </worksheet>
+    <worksheet name='Revenue and Profit'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column caption='2020 Units Sold' datatype='integer' name='[2020_units_sold]' role='measure' type='quantitative' />
+            <column caption='Revenue 2020' datatype='real' name='[Calculation_2514767852691898369]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[2020_units_sold]*[Retail_Price]' />
+            </column>
+            <column caption='Profit 2020' datatype='real' name='[Calculation_2514767852691972098]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_2514767852691898369]-[Total COGS 2021 (copy)_4810337027684888577]' />
+            </column>
+            <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Factory Equipment Rent Costs' datatype='real' name='[Factory_Equipment_Rent_Costs]' role='measure' type='quantitative' />
+            <column caption='Factory Labor Costs' datatype='real' name='[Factory_Labor_Costs]' role='measure' type='quantitative' />
+            <column caption='Raw Material Cost' datatype='real' name='[Raw_Material_Cost]' role='measure' type='quantitative' />
+            <column caption='Retail Price' datatype='real' name='[Retail_Price]' role='measure' type='quantitative' />
+            <column caption='Total COGS 2020' datatype='real' name='[Total COGS 2021 (copy)_4810337027684888577]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([Raw_Material_Cost]+[Factory_Labor_Costs]+[Factory_Equipment_Rent_Costs])*[2020_units_sold]' />
+            </column>
+            <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2514767852691898369]' derivation='Sum' name='[sum:Calculation_2514767852691898369:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2514767852691972098]' derivation='Sum' name='[sum:Calculation_2514767852691972098:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_2514767852691898369:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_2514767852691972098:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_2514767852691898369:qk] + [federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_2514767852691972098:qk])</rows>
+        <cols>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Category:nk]</cols>
+      </table>
+      <simple-id uuid='{FA1FB497-A5F5-4D8F-B228-CB91CA84BB04}' />
+    </worksheet>
+    <worksheet name='Sales by Year'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <column aggregation='Sum' caption='Invoice Year' datatype='integer' name='[Calculation_3046755558937657344]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='YEAR([Invoice_Date])' />
+            </column>
+            <column caption='Total Orders 2021' datatype='integer' name='[Calculation_3046755558938161153]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2021&#10;THEN [Quantity]&#10;END)}' />
+            </column>
+            <column caption='Total Orders 2022' datatype='integer' name='[Calculation_3046755558938611714]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [Description]:SUM(IF [Calculation_3046755558937657344] = 2022&#10;THEN [Quantity]&#10;END)}' />
+            </column>
+            <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+            <column caption='Invoice Date' datatype='date' name='[Invoice_Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_3046755558938161153]' derivation='Sum' name='[pcto:sum:Calculation_3046755558938161153:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_3046755558938611714]' derivation='Sum' name='[pcto:sum:Calculation_3046755558938611714:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <manual-sort column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;GROW A FLYTRAP OR SUNFLOWER IN TIN&quot;</bucket>
+              <bucket>&quot;WOODLAND CHARLOTTE BAG&quot;</bucket>
+              <bucket>&quot;DOUGHNUT LIP GLOSS&quot;</bucket>
+              <bucket>&quot;STRAWBERRY CERAMIC TRINKET BOX&quot;</bucket>
+              <bucket>&quot;WHITE SPOT RED CERAMIC DRAWER KNOB&quot;</bucket>
+              <bucket>&quot;HAND WARMER UNION JACK&quot;</bucket>
+              <bucket>&quot;JUMBO BAG DOLLY GIRL DESIGN&quot;</bucket>
+              <bucket>&quot;REGENCY MILK JUG PINK&quot;</bucket>
+              <bucket>&quot;JAZZ HEARTS ADDRESS BOOK&quot;</bucket>
+              <bucket>&quot;CHRISTMAS TOILET ROLL&quot;</bucket>
+              <bucket>&quot;PACK OF 12 VINTAGE CHRISTMAS TISSUE&quot;</bucket>
+              <bucket>&quot;VICTORIAN  METAL POSTCARD SPRING&quot;</bucket>
+              <bucket>&quot;PIGGY BANK RETROSPOT&quot;</bucket>
+              <bucket>&quot;CHRISTMAS CRAFT TREE TOP ANGEL&quot;</bucket>
+              <bucket>&quot;MULTICOLOUR SPRING FLOWER MUG&quot;</bucket>
+              <bucket>&quot;DOLLY GIRL BEAKER&quot;</bucket>
+              <bucket>&quot;SET OF 4 KNICK KNACK TINS DOILY&quot;</bucket>
+              <bucket>&quot;SET OF 6 SOLDIER SKITTLES&quot;</bucket>
+              <bucket>&quot;WOODEN HAPPY BIRTHDAY GARLAND&quot;</bucket>
+              <bucket>&quot;FAIRY CAKES NOTEBOOK A7 SIZE&quot;</bucket>
+              <bucket>&quot;CHILDRENS CUTLERY POLKADOT GREEN&quot;</bucket>
+              <bucket>&quot;POLYESTER FILLER PAD 45x45cm&quot;</bucket>
+              <bucket>&quot;TREASURE TIN BUFFALO BILL&quot;</bucket>
+              <bucket>&quot;WHITE WICKER STAR&quot;</bucket>
+              <bucket>&quot;PAPER BUNTING VINTAGE PAISLEY&quot;</bucket>
+              <bucket>&quot;PORCELAIN BUDAH INCENSE HOLDER&quot;</bucket>
+              <bucket>&quot;incorrectly credited C550456 see 47&quot;</bucket>
+              <bucket>&quot;FAIRY DREAMS INCENSE&quot;</bucket>
+              <bucket>&quot;POPART RECT PENCIL SHARPENER ASST&quot;</bucket>
+              <bucket>&quot;MINI TAPES&quot;</bucket>
+              <bucket>&quot;DOILEY STORAGE TIN&quot;</bucket>
+              <bucket>&quot;EASTER TIN KEEPSAKE&quot;</bucket>
+              <bucket>&quot;SWEETHEART RECIPE BOOK STAND&quot;</bucket>
+              <bucket>&quot;FRENCH BLUE METAL DOOR SIGN 2&quot;</bucket>
+              <bucket>&quot;VICTORIAN SEWING BOX SMALL&quot;</bucket>
+              <bucket>&quot;JIGSAW TREE WITH BIRDHOUSE&quot;</bucket>
+              <bucket>&quot;CLASSIC METAL BIRDCAGE PLANT HOLDER&quot;</bucket>
+              <bucket>&quot;3 WHITE CHOC MORRIS BOXED CANDLES&quot;</bucket>
+              <bucket>&quot;3 RAFFIA RIBBONS VINTAGE CHRISTMAS&quot;</bucket>
+              <bucket>&quot;ASSORTED TOFFEE CHOCOLATE&quot;</bucket>
+              <bucket>&quot;3 DRAWER ANTIQUE WHITE WOOD CABINET&quot;</bucket>
+              <bucket>&quot;DIAMANTE RING ASSORTED IN BOX.&quot;</bucket>
+              <bucket>&quot;SAVE THE PLANET COTTON TOTE BAG&quot;</bucket>
+              <bucket>&quot;RIBBON REEL FLORA + FAUNA&quot;</bucket>
+              <bucket>&quot;BEADED CRYSTAL HEART GREEN ON STICK&quot;</bucket>
+              <bucket>&quot;ROSE CARAVAN DOORSTOP&quot;</bucket>
+              <bucket>&quot;FELT EGG COSY BLUE RABBIT&quot;</bucket>
+              <bucket>&quot;SALLE DE BAIN HOOK&quot;</bucket>
+              <bucket>&quot;GINGHAM RECIPE BOOK BOX&quot;</bucket>
+              <bucket>&quot;A PRETTY THANK YOU CARD&quot;</bucket>
+              <bucket>&quot;PSYCHEDELIC TILE COASTER&quot;</bucket>
+              <bucket>&quot;3D SHEET OF DOG STICKERS&quot;</bucket>
+              <bucket>&quot;SWEETHEART WIRE MAGAZINE RACK&quot;</bucket>
+              <bucket>&quot;I LOVE LONDON BABY GIFT SET&quot;</bucket>
+              <bucket>&quot;FAIRY SOAP SOAP HOLDER&quot;</bucket>
+              <bucket>&quot;PINK POT PLANT CANDLE&quot;</bucket>
+              <bucket>&quot;ASSORTED TUTTI FRUTTI HEART BOX&quot;</bucket>
+              <bucket>&quot;BLUE FLY SWAT&quot;</bucket>
+              <bucket>&quot;GREEN GOOSE FEATHER TREE 60CM&quot;</bucket>
+              <bucket>&quot;SUMMER DAISIES BAG CHARM&quot;</bucket>
+              <bucket>&quot;WOVEN BERRIES CUSHION COVER&quot;</bucket>
+              <bucket>&quot;MA CAMPAGNE CUTLERY BOX&quot;</bucket>
+              <bucket>&quot;ENAMEL BLUE RIM COFFEE CONTAINER&quot;</bucket>
+              <bucket>&quot;FAN BLACK FRAME&quot;</bucket>
+              <bucket>&quot;ORIGAMI VANILLA INCENSE CONES&quot;</bucket>
+              <bucket>&quot;GYMKHANNA TREASURE BOOK BOX&quot;</bucket>
+              <bucket>&quot;DOILEY BISCUIT TIN&quot;</bucket>
+              <bucket>&quot;BLACK SQUARE TABLE CLOCK&quot;</bucket>
+              <bucket>&quot;SET OF 4 NAPKIN CHARMS INSTRUMENT&quot;</bucket>
+              <bucket>&quot;PEG BAG APPLE DESIGN&quot;</bucket>
+              <bucket>&quot;POLYESTER FILLER PAD 45x30cm&quot;</bucket>
+              <bucket>&quot;RED DRAGONFLY HELICOPTER&quot;</bucket>
+              <bucket>&quot;DOLLCRAFT GIRL AMELIE KIT&quot;</bucket>
+              <bucket>&quot;TRIANGULAR POUFFE VINTAGE&quot;</bucket>
+              <bucket>&quot;PICNIC BASKET WICKER 60 PIECES&quot;</bucket>
+              <bucket>&quot;LETTER \&quot;M\&quot; BLING KEY RING&quot;</bucket>
+              <bucket>&quot;SILVER M.O.P ORBIT DROP EARRINGS&quot;</bucket>
+              <bucket>&quot;BLUE CHENILLE SHAGGY CUSHION COVER&quot;</bucket>
+              <bucket>&quot;STEEL SWEETHEART ROUND TABLE CREAM&quot;</bucket>
+              <bucket>&quot;RIDGED GLASS STORAGE JAR CREAM LID&quot;</bucket>
+              <bucket>&quot;SET OF 12 MINI BUNNIES IN A BUCKET&quot;</bucket>
+              <bucket>&quot;RED BOUDICCA LARGE BRACELET&quot;</bucket>
+              <bucket>&quot;PINK SMALL GLASS CAKE STAND&quot;</bucket>
+              <bucket>&quot;DIAMANTE HAIR GRIP PACK/2 PERIDOT&quot;</bucket>
+              <bucket>&quot;PEACE SMALL WOOD LETTERS&quot;</bucket>
+              <bucket>&quot;YELLOW DRAGONFLY HELICOPTER&quot;</bucket>
+              <bucket>&quot;BLACK MEDIUM GLASS CAKE STAND&quot;</bucket>
+              <bucket>&quot;YELLOW/BLUE RETRO RADIO&quot;</bucket>
+              <bucket>&quot;CLASSIC DIAMANTE EARRINGS SET&quot;</bucket>
+              <bucket>&quot;SET 10 XMAS CARDS &amp; BADGES 17070&quot;</bucket>
+              <bucket>&quot;GREEN DROP EARRINGS W BEAD CLUSTER&quot;</bucket>
+              <bucket>&quot;PINK GLASS CHUNKY CHARM BRACELET&quot;</bucket>
+              <bucket>&quot;MOROCCAN BEATEN METAL DISH LARGE&quot;</bucket>
+              <bucket>&quot;CHAMPAGNE TRAY BLANK CARD&quot;</bucket>
+              <bucket>&quot;BLUE WIRE SPIRAL CANDLE HOLDER&quot;</bucket>
+              <bucket>&quot;BLACK/WHITE GLASS/SILVER BRACELET&quot;</bucket>
+              <bucket>&quot;FLOWER GARLAND NECKLACE RED&quot;</bucket>
+              <bucket>&quot;ANTIQUE OLIVE GREEN FLOWER EARRINGS&quot;</bucket>
+              <bucket>&quot;DIAMANTE NECKLACE&quot;</bucket>
+              <bucket>&quot;RED WHITE SCARF  HOT WATER BOTTLE&quot;</bucket>
+              <bucket>&quot;PINK CRYSTAL GUITAR PHONE CHARM&quot;</bucket>
+              <bucket>&quot;PINK MARSHMALLOW SCARF KNITTING KIT&quot;</bucket>
+              <bucket>&quot;PINK HEART DOTS HOT WATER BOTTLE&quot;</bucket>
+              <bucket>&quot;FIRE POLISHED GLASS NECKL BRONZE&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[pcto:sum:Calculation_3046755558938161153:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.181tpna05c96ne1gx6kit0w7r8fr].[pcto:sum:Calculation_3046755558938611714:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.181tpna05c96ne1gx6kit0w7r8fr].[none:Description:nk]</rows>
+        <cols>([federated.181tpna05c96ne1gx6kit0w7r8fr].[pcto:sum:Calculation_3046755558938161153:qk] + [federated.181tpna05c96ne1gx6kit0w7r8fr].[pcto:sum:Calculation_3046755558938611714:qk])</cols>
+      </table>
+      <simple-id uuid='{53063C3C-862B-4CB7-93EC-742C4D5F1411}' />
+    </worksheet>
+    <worksheet name='Stock Data Check'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Stock+ (Acropolis_Retail_data)' name='federated.181tpna05c96ne1gx6kit0w7r8fr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.181tpna05c96ne1gx6kit0w7r8fr'>
+            <_.fcp.ObjectModelTableType.false...column caption='Stock' datatype='integer' name='[__tableau_internal_object_id__].[Stock_4671C6A82EC14D61B5769BA57B3ABB13]' role='measure' type='quantitative' />
+            <column caption='Sku-Id' datatype='string' name='[SKU-ID]' role='dimension' type='nominal' />
+            <_.fcp.ObjectModelTableType.true...column caption='Stock' datatype='table' name='[__tableau_internal_object_id__].[Stock_4671C6A82EC14D61B5769BA57B3ABB13]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Stock_4671C6A82EC14D61B5769BA57B3ABB13]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Stock_4671C6A82EC14D61B5769BA57B3ABB13:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[SKU-ID]' derivation='CountD' name='[ctd:SKU-ID:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[__tableau_internal_object_id__].[cnt:Stock_4671C6A82EC14D61B5769BA57B3ABB13:qk]' />
+              <text column='[federated.181tpna05c96ne1gx6kit0w7r8fr].[ctd:SKU-ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F96E23E4-4FDB-4488-85EC-0446CDA5CABF}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='37'>
+    <window class='worksheet' name='Stock Data Check'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{98636BF3-B23F-4578-B4BB-40ECC6ABDA9D}' />
+    </window>
+    <window class='worksheet' name='Orders Check'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{13E33D08-1C9D-4631-9142-B7FA200DC607}' />
+    </window>
+    <window class='worksheet' name='COGS 2020'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0FA29860-507E-4153-BAB8-A9043C6E524D}' />
+    </window>
+    <window class='worksheet' name='Revenue and Profit'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9D977CA9-59D8-4CC0-8BB5-2C50FCB094AC}' />
+    </window>
+    <window class='worksheet' name='Sales by Year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{63FA7BB4-1163-49D5-81C0-6D60A3EFBD20}' />
+    </window>
+    <window class='worksheet' name='Inventory Turnover'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.181tpna05c96ne1gx6kit0w7r8fr].[sum:Calculation_3046755558941519877:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AAD9CF7F-D1DA-45B2-922C-1C64A3EE1640}' />
+    </window>
+    <window class='worksheet' name='Revenue Comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.181tpna05c96ne1gx6kit0w7r8fr].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A134227D-7792-4381-9528-617C0B739E1A}' />
+    </window>
+    <window class='worksheet' maximized='true' name='ABC'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0F6CDC96-2194-4002-B9AD-CB036D6C71F3}' />
+    </window>
+  </windows>
+</workbook>
